@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.cmavelis.blog",
+      "microservicePath": "../store"
+    },
+    "jhipsterVersion": "6.1.2",
+    "applicationType": "gateway",
+    "baseName": "blog",
+    "packageName": "com.cmavelis.blog",
+    "packageFolder": "com/cmavelis/blog",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MTBkMGI1NTYyNGYwNWQ2YTM0Y2MwMTBhOTJlY2UwNDRkZGFhNTdmNTg1MGM1YTAwYjlhMmI4OGY3NzY0ZmFkNjU5NzYyYzg2MTc5ZmYzOTYzMDY4NzgwYjk2MzRhOGU4NTEyZTg4ZThmMWNjNjU2MWUyNTlkY2VhNmM1MmMzM2I=",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "react",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "testFrameworks": [
+      "gatling",
+      "protractor"
+    ],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false
+  }
+}
