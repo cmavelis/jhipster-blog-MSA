@@ -20,7 +20,10 @@ import java.util.Set;
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Entry implements Serializable {
 
-    private statdategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
