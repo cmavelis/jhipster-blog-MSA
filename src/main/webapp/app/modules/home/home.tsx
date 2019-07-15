@@ -6,18 +6,19 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Row, Col, Alert } from 'reactstrap';
 
-import { IRootState } from 'app/shared/reducers';
 import { getSession } from 'app/shared/reducers/authentication';
+import { getEntity as getBlogEntity } from 'app/entities/blog/blog.reducer';
 
 export interface IHomeProp extends StateProps, DispatchProps {}
 
 export class Home extends React.Component<IHomeProp> {
   componentDidMount() {
     this.props.getSession();
+    this.props.getBlogEntity(1051);
   }
 
   render() {
-    const { account } = this.props;
+    const { account, blogEntity } = this.props;
     return (
       <Row>
         <Col md="9">
@@ -48,8 +49,17 @@ export class Home extends React.Component<IHomeProp> {
               </Alert>
             </div>
           )}
-          <p>Here are some of the best blogs:</p>
-
+          <p>Here's a blog:</p>
+          <dl className="jh-entity-details">
+            <dt>
+              <span id="name">Name</span>
+            </dt>
+            <dd>{blogEntity.name}</dd>
+            <dt>
+              <span id="handle">Handle</span>
+            </dt>
+            <dd>{blogEntity.handle}</dd>
+          </dl>
           <p>And a product:</p>
         </Col>
         <Col md="3" className="pad">
@@ -62,10 +72,11 @@ export class Home extends React.Component<IHomeProp> {
 
 const mapStateToProps = storeState => ({
   account: storeState.authentication.account,
-  isAuthenticated: storeState.authentication.isAuthenticated
+  isAuthenticated: storeState.authentication.isAuthenticated,
+  blogEntity: storeState.blog.entity
 });
 
-const mapDispatchToProps = { getSession };
+const mapDispatchToProps = { getSession, getBlogEntity };
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = typeof mapDispatchToProps;
